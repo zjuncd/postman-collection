@@ -106,6 +106,14 @@ var expect = require('expect.js'),
         });
     };
 
+console.log({
+    nodeVersion: nodeVersion,
+    runningOnTravis: runningOnTravis,
+    regexMatch: nodeVersion.match(/^v4./),
+    finalCondition: (runningOnTravis && nodeVersion.match(/^v4./)),
+    travisNodeV4Skip: travisNodeV4Skip
+});
+
 describe('UrlMatchPattern', function () {
     describe('constructor', function () {
         it('should set match pattern to <all_urls> when called with no arguments', function () {
